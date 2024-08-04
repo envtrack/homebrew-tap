@@ -7,18 +7,18 @@ class Envtrack < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/envtrack/envtrack-cli/releases/download/b-1.0.1/envtrack-b-1.0.1-darwin-arm64"
-      sha256 "751373cb4b39dbd4e0b1f6df75023b918aa3b008ef1edbdcc72b18f31b6eab4d"
+      sha256 "c8e5759bc05f1817d0965fae531f91d0808751359b79905fc891216ec8cc8c70"
     else
       url "https://github.com/envtrack/envtrack-cli/releases/download/b-1.0.1/envtrack-b-1.0.1-darwin-amd64"
-      sha256 "1a346921526149620b59c1c0fe9b8a02a9280f9d790eb6cb3cbd2fb713456546"
+      sha256 "867a3e230d341b4f70ae64bd4edccd3dfc166e6f4bcf19d24ca454493a86b5c1"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/envtrack/envtrack-cli/releases/download/b-1.0.1/envtrack-b-1.0.1-linux-arm64"
-      sha256 "05889a5f22419c848d66c6e22df737c9c0b833e4111b741be2ddcc3a952f3cfd"
+      sha256 "3e2d544beb64321a046835428f8320a7e57ebb5b5fc19dfc352546b709f98b2c"
     else
       url "https://github.com/envtrack/envtrack-cli/releases/download/b-1.0.1/envtrack-b-1.0.1-linux-amd64"
-      sha256 "9059a7c46ea2d1606b05611e468e9de842d814f5bf1abb78e7857c348a160efd"
+      sha256 "e3591d3cf93dc6e9f4e8d4e95c718cb760cbc1b741db969c315929016d88d27b"
     end
   end
 
@@ -27,7 +27,7 @@ class Envtrack < Formula
     bin.install binary_name => "envtrack"
   end
 
-  # test do
-  #   assert_match "EnvTrack CLI version 1.0.1", shell_output("#{bin}/envtrack version")
-  # end
+  test do
+    assert_match "b-1.0.1", shell_output("#{bin}/envtrack version --short")
+  end
 end
