@@ -23,7 +23,8 @@ class Envtrack < Formula
   end
 
   def install
-    bin.install "envtrack"
+    binary_name = "envtrack-#{version}-#{OS.kernel_name.downcase}-#{Hardware::CPU.arch}"
+    bin.install binary_name => "envtrack"
   end
 
   # test do
