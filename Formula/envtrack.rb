@@ -1,7 +1,7 @@
 class Envtrack < Formula
   desc "EnvTrack CLI tool for managing environment variables"
   homepage "https://github.com/envtrack/envtrack-cli"
-  version "1.0.1"
+  version "1.0.2"
   license "MIT"
 
   if OS.mac?
